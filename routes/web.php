@@ -42,5 +42,8 @@ Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.e
 use App\Http\Controllers\TaskController;
 Route::resource('tasks', TaskController::class);
 
+use App\Http\Controllers\MembershipController;
+Route::resource('memberships', MembershipController::class);
+
 
 
