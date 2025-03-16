@@ -42,5 +42,9 @@ Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.e
 use App\Http\Controllers\TaskController;
 Route::resource('tasks', TaskController::class);
 
+use App\Http\Controllers\SessionController;
+Route::resource('create_sessions', SessionController::class);
 
-
+Route::get('/test-session-create', function () {
+    return view('create_sessions.create');
+});
