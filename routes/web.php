@@ -49,7 +49,9 @@ Route::resource('create_sessions', SessionController::class);
 use App\Http\Controllers\MembershipController;
 Route::resource('memberships', MembershipController::class);
 
-
+use App\Http\Controllers\RegisterController;
+Route::get('/register', [RegisterController::class, 'create'])->name('register.create');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/test-session-create', function () {
     return view('create_sessions.create');
